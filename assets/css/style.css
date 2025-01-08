@@ -1,0 +1,260 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007bff; /* Warna latar belakang navbar */
+    color: white; /* Warna teks navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    z-index: 1001; /* Pastikan navbar berada di atas konten */
+}
+
+.navbar-brand {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Pusatkan item secara vertikal */
+    padding: 0 15px;
+    height: 100%;
+}
+
+.navbar-brand img {
+    height: 40px; /* Tinggi gambar logo */
+    margin-right: 10px; /* Jarak kanan untuk gambar logo */
+}
+
+.burger-menu {
+    background-color: transparent; /* Latar belakang transparan untuk tombol burger */
+    color: white; /* Warna teks tombol burger */
+    border: none; /* Tanpa border */
+    font-size: 1.5rem; /* Ukuran font untuk tombol burger */
+    margin-left: auto; /* Menggeser tombol ke kanan */
+    cursor: pointer; /* Menunjukkan bahwa ini dapat diklik */
+}
+
+/* Content */
+.content {
+    padding: 20px; /* Padding untuk konten */
+    margin-top: 56px; /* Hindari bertumpuk dengan navbar */
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* Sembunyikan overlay secara default */
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 56px);
+    background-color: rgba(0, 0, 0, 0.5); /* Warna overlay */
+    z-index: 999; /* Pastikan overlay berada di atas konten */
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 15px; /* Padding untuk tombol */
+    text-decoration: none; /* Tanpa garis bawah */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    margin: 5px 0; /* Margin atas dan bawah untuk tombol */
+    display: inline-block; /* Menampilkan tombol sebagai blok inline */
+    transition: background-color 0.3s; /* Transisi halus saat hover */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Warna latar belakang untuk tombol berbahaya */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Warna lebih gelap saat hover untuk tombol berbahaya */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Lebar tabel penuh */
+    border-collapse: collapse; /* Menghapus jarak antara border sel */
+    margin: 20px 0; /* Margin atas dan bawah untuk tabel */
+}
+
+th, td {
+    padding: 12px; /* Padding untuk sel tabel */
+    text-align: left; /* Rata kiri untuk teks dalam sel */
+    border-bottom: 1px solid #ddd; /* Garis bawah untuk sel */
+}
+
+th {
+    background-color: #007bff; /* Warna latar belakang untuk header tabel */
+    color: white; /* Warna teks untuk header tabel */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover pada baris tabel */
+}
+
+/* No Users Message */
+.no-users {
+    text-align: center; /* Pusatkan teks */
+    padding: 20px; /* Padding untuk pesan */
+    color: #666; /* Warna teks untuk pesan */
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px; /* Padding untuk alert */
+    margin-bottom: 20px; /* Margin bawah untuk alert */
+    border-radius: 5px; /* Sudut membulat untuk alert */
+    display: none; /* Sembunyikan secara default */
+}
+
+.alert.success {
+    background-color: #d4edda; /* Warna latar belakang untuk alert sukses */
+    color: #155724; /* Warna teks untuk alert sukses */
+    border: 1px solid #c3e6cb; /* Border untuk alert sukses */
+}
+
+.alert.error {
+    background-color: #f8d7da; /* Warna latar belakang untuk alert error */
+    color: #721c24; /* Warna teks untuk alert error */
+    border: 1px solid #f5c6cb; /* Border untuk alert error */
+}
+
+/* Form Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Lebar penuh untuk input dan textarea */
+    padding: 10px; /* Padding untuk input dan textarea */
+    margin: 5px 0 15px 0; /* Margin untuk input dan textarea */
+    border: 1px solid #ccc; /* Border untuk input dan textarea */
+    border-radius: 4px; /* Sudut membulat untuk input dan textarea */
+    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar total */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Ganti warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex; /* Menggunakan flexbox untuk pagination */
+    justify-content: center; /* Pusatkan pagination secara horizontal */
+    margin: 20px 0; /* Margin atas dan bawah untuk pagination */
+}
+
+.pagination a {
+    color: #007bff; /* Warna teks untuk tautan pagination */
+    padding: 8px 16px; /* Padding untuk tautan pagination */
+    text-decoration: none; /* Tanpa garis bawah */
+    border: 1px solid #007bff; /* Border untuk tautan pagination */
+    margin: 0 5px; /* Margin kiri dan kanan untuk tautan pagination */
+    border-radius: 4px; /* Sudut membulat untuk tautan pagination */
+    transition: background-color 0.3s; /* Transisi halus saat hover */
+}
+
+.pagination a:hover {
+    background-color: #007bff; /* Warna latar belakang saat hover */
+    color: white; /* Warna teks saat hover */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative; /* Posisi relatif untuk tooltip */
+    display: inline-block; /* Menampilkan tooltip sebagai blok inline */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden; /* Sembunyikan tooltip secara default */
+    width: 120px; /* Lebar tooltip */
+    background-color: #555; /* Warna latar belakang tooltip */
+    color: #fff; /* Warna teks tooltip */
+    text-align: center; /* Rata tengah untuk teks tooltip */
+    border-radius: 6px; /* Sudut membulat untuk tooltip */
+    padding: 5px 0; /* Padding untuk tooltip */
+    position: absolute; /* Posisi absolut untuk tooltip */
+    z-index: 1; /* Pastikan tooltip berada di atas elemen lainnya */
+    bottom: 125%; /* Tempatkan tooltip di atas elemen */
+    left: 50%; /* Pusatkan tooltip secara horizontal */
+    margin-left: -60px; /* Pusatkan tooltip */
+    opacity: 0; /* Sembunyikan tooltip */
+    transition: opacity 0.3s; /* Transisi halus untuk opacity */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Tampilkan tooltip saat hover */
+    opacity: 1; /* Ubah opacity menjadi 1 saat ditampilkan */
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff; /* Warna latar belakang untuk kartu */
+    border: 1px solid #ddd; /* Border untuk kartu */
+    border-radius: 5px; /* Sudut membulat untuk kartu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk kartu */
+    margin-bottom: 20px; /* Margin bawah untuk kartu */
+}
+
+.card-header {
+    background-color: #007bff; /* Warna latar belakang untuk header kartu */
+    color: white; /* Warna teks untuk header kartu */
+    padding: 10px; /* Padding untuk header kartu */
+    border-top-left-radius: 5px; /* Sudut membulat kiri atas */
+    border-top-right-radius: 5px; /* Sudut membulat kanan atas */
+}
+
+.card-body {
+    padding: 15px; /* Padding untuk isi kartu */
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 56px; /* Hindari bertumpuk dengan navbar */
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.profile-data {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Container untuk Manajemen Pengguna, Data Kategori, dan Data Arsip */
+.management-container {
+    padding: 20px; /* Padding untuk konten */
+    margin-top: 56px; /* Hindari bertumpuk dengan navbar */
+}
+
+/* Responsive Styles untuk Container */
+@media (max-width: 768px) {
+    .management-container {
+        margin-left: 0; /* Margin kiri dihapus untuk layar kecil */
+    }
+}
