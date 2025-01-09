@@ -37,8 +37,13 @@ class Arsip extends CI_Controller {
     }
 
     public function add() {
-        $this->load->view('add_arsip_view');
+        // Ambil data kategori dari database
+        $data['kategori'] = $this->db->get('kategori')->result();
+    
+        // Kirim data kategori ke view
+        $this->load->view('add_arsip_view', $data);
     }
+    
 
     public function create() {
         if ($this->input->post()) {
@@ -168,29 +173,6 @@ class Arsip extends CI_Controller {
         }
         $this->load->view('arsip_detail_view', $data);
     }
-
-    // public function download($id) {
-    //     // Ambil informasi arsip berdasarkan ID
-    //     $arsip = $this->Arsip_model->get_arsip_by_id($id);
-        
-    //     // Cek apakah arsip ditemukan
-    //     if (!$arsip) {
-    //         show_404(); // Jika arsip tidak ditemukan, tampilkan halaman 404
-    //     }
-    
-    //     // Tentukan path file yang akan diunduh
-    //     $file_path = './uploads/' . $arsip->file_path;
-    
-    //     // Cek apakah file ada
-    //     if (file_exists($file_path)) {
-    //         // Menggunakan helper download untuk mengunduh file
-    //         force_download($file_path, NULL);
-    //     } else {
-    //         // Jika file tidak ditemukan
-    //         $this->session->set_flashdata('error', 'File tidak ditemukan.');
-    //         redirect('arsip');
-    //     }
-    // }
 
     public function kirim($arsip_id) {
         // Ambil data arsip berdasarkan ID
