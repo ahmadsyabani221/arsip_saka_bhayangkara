@@ -159,23 +159,34 @@
                 </div>
             </div>
 
-            <!-- Widget Last Login -->
-            <div class="card mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0"><i class="fas fa-clock"></i> Pengguna Terakhir Login</h5>
-                </div>
-                <div class="card-body">
-                    <?php if (isset($last_logins) && is_array($last_logins)): ?>
-                        <ul>
-                            <?php foreach ($last_logins as $login): ?>
-                                <li><?php echo $login['username']; ?> - <?php echo $login['last_login']; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php else: ?>
-                        <p>Tidak ada data pengguna yang login terakhir.</p>
-                    <?php endif; ?>
-                </div>
-            </div>
+<!-- Widget Last Login -->  
+<div class="card mb-4">  
+    <div class="card-header bg-info text-white">  
+        <h5 class="mb-0"><i class="fas fa-clock"></i> Pengguna Terakhir Login</h5>  
+    </div>  
+    <div class="card-body">  
+        <?php if (isset($last_logins) && is_array($last_logins)): ?>  
+            <ul>  
+                <?php foreach ($last_logins as $login): ?>  
+                    <li>  
+                        <?php echo $login['username']; ?> -     
+                        <?php  
+                            // Menggunakan DateTime untuk mengatur zona waktu  
+                            $lastLoginTime = new DateTime($login['last_login'], new DateTimeZone('Asia/Jakarta')); // Asumsikan waktu disimpan dalam UTC  
+                            $lastLoginTime->setTimezone(new DateTimeZone('Asia/Jakarta')); // Ubah ke zona waktu Jakarta  
+                            echo $lastLoginTime->format('d-m-Y H:i:s'); // Format waktu yang diinginkan  
+                        ?>  
+                    </li>  
+                <?php endforeach; ?>  
+            </ul>  
+        <?php else: ?>  
+            <p>Tidak ada data pengguna yang login terakhir.</p>  
+        <?php endif; ?>  
+    </div>  
+</div>  
+
+
+
         </div>
     </div>
 

@@ -77,19 +77,24 @@ class Auth extends CI_Controller {
         }
     }
 
-    public function logout() {
-        // Hapus session tanpa update last_login
-        $this->session->sess_destroy();
+    public function logout() {  
+        // Ambil user_id dari session  
+        $user_id = $this->session->userdata('user_id');  
+      
+        // Perbarui last_login sebelum menghapus session  
+        if ($user_id) {  
+            $this->User_model->update_last_login($user_id, date('Y-m-d H:i:s')); // Menggunakan waktu saat ini  
+        }  
+      
+        // Hapus session  
+        $this->session->sess_destroy();  
+      
+        // Redirect ke halaman login  
+        redirect('auth/login');  
+    }  
     
-        // Redirect ke halaman login
-        redirect('auth/login');
-    }
     
-    public function forgot_password()
-{
-    $this->load->view('auth/forgot_password_view'); // Tampilkan halaman lupa password
-}
-
+    
 public function update_password()
 {
     $user_id = $this->input->post('user_id');

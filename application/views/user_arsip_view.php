@@ -87,6 +87,7 @@
         <a href="<?php echo site_url('dashboard'); ?>"><i class="fas fa-home"></i> Home</a>
         <a href="<?php echo site_url('profile'); ?>"><i class="fas fa-user"></i> Profil</a>
         <a href="<?php echo site_url('arsip'); ?>"><i class="fas fa-archive"></i> Arsip</a>
+        <a href="<?php echo site_url('ganti_password'); ?>"><i class="fas fa-key"></i> Ganti Password</a>
         <a href="<?php echo site_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 

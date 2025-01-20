@@ -22,9 +22,6 @@ class Arsip extends CI_Controller {
         // Ambil data arsip berdasarkan user_id (untuk user)
         $data['arsip_user'] = $this->Arsip_model->get_arsip_by_user($user_id);
     
-        // Debug data arsip_user
-        // var_dump($data['arsip_user']); // Tambahkan var_dump untuk menampilkan data
-    
         // Cek role untuk menentukan tampilan
         if ($this->session->userdata('role') == 'admin') {
             $this->load->view('admin/admin_arsip_view', $data);
@@ -96,6 +93,7 @@ class Arsip extends CI_Controller {
 
     public function edit($id) {
         $data['arsip'] = $this->Arsip_model->get_arsip_by_id($id);
+        $data['kategori'] = $this->db->get('kategori')->result();
         $this->load->view('edit_arsip_view', $data);
     }
 

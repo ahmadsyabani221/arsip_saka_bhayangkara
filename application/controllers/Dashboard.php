@@ -25,10 +25,7 @@ class Dashboard extends CI_Controller {
     
         // Ambil total pengguna
         $data['total_users'] = $this->User_model->count_all_users();
-    
-        // Ambil data unduhan arsip (misalnya, per bulan)
-        // $data['download_data'] = $this->Arsip_model->get_download_data();
-    
+       
         // Ambil data last logins
         $data['last_logins'] = $this->User_model->get_last_logins();
     
